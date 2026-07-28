@@ -124,3 +124,24 @@ result). The three-iteration experiment (v1 -> v2 -> v3) demonstrates the value 
 iteration: the first fix (phrasing diversity) produced a real, measurable improvement (+8.4pp);
 the second fix (class rebalancing) was a reasonable hypothesis that the data disproved, which is
 itself a useful negative result ruling out one candidate explanation for the remaining gap.
+
+
+## Phase 3: Confidence-Based Cascading (Scoped Out)
+
+Attempted to add confidence-based cascading fallback: escalate to a higher tier when the
+classifier is uncertain, using token log-probabilities as the confidence signal.
+
+**Finding:** Groq's inference API does not expose `logprobs` on any available model
+(llama-3.1-8b-instant, llama-3.3-70b-versatile) - confirmed via direct API testing, both
+return `400: logprobs is not supported with this model`. This is a real constraint of Groq's
+LPU-based fast-inference stack, which trades this capability for speed, unlike standard
+GPU-serving APIs (OpenAI, most vLLM deployments) that support token-level log-probabilities.
+
+A fallback approach (asking the model to self-report a confidence label) was tested and
+rejected: it returned "high" confidence on 8/8 test queries, including nonsense input
+("asdf jkl random text"), demonstrating that LLM self-reported confidence is not a reliable
+signal without actual log-probability access.
+
+**Decision:** Scoped out confidence-based cascading for this iteration rather than building on
+an unreliable signal. Revisit if switching to a provider that exposes logprobs, or explore a
+verifier-model approach (a second model scores the first model's answer) as an alternative.
