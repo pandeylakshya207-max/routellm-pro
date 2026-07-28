@@ -1,0 +1,44 @@
+{"query": "Describe the steps involved in the process of data encryption using SSL/TLS protocol", "label": "medium"}
+{"query": "Who painted the Mona Lisa", "label": "simple"}
+{"query": "What is the relationship between the concept of entropy and the arrow of time in thermodynamics", "label": "complex"}
+{"query": "Solve the problem of finding the shortest path in a graph using Dijkstra's algorithm", "label": "complex"}
+{"query": "What is the relationship between the Riemann hypothesis and the distribution of prime numbers, and how does this impact our understanding of number theory and cryptography?", "label": "complex"}
+{"query": "Hello how are you", "label": "simple"}
+{"query": "How does a compiler optimize machine code for better performance in terms of execution speed and memory usage", "label": "medium"}
+{"query": "What is the definition of a black hole", "label": "simple"}
+{"query": "What is the largest city in Australia", "label": "simple"}
+{"query": "Explain the difference between synchronous and asynchronous programming paradigms", "label": "medium"}
+{"query": "Prove that the traveling salesman problem is NP-hard and cannot be solved exactly in polynomial time", "label": "complex"}
+{"query": "Convert 10 miles to kilometers", "label": "simple"}
+{"query": "Compare and contrast the mathematical structures underlying the Navier-Stokes equations and the Einstein field equations, and explore the potential for developing a unified theoretical framework for fluid dynamics and gravity.", "label": "complex"}
+{"query": "Explain the difference between null and undefined in JavaScript and provide use cases", "label": "medium"}
+{"query": "Write a Python script to simulate a simple banking system with user accounts and transactions", "label": "medium"}
+{"query": "How does the concept of entropy relate to the arrow of time in cosmology", "label": "complex"}
+{"query": "Prove that the Riemann Hypothesis implies the Goldbach Conjecture", "label": "complex"}
+{"query": "I need help understanding the concept of quantum entanglement and its implications on our understanding of reality", "label": "complex"}
+{"query": "Compare the trade-offs between using a hash table and a binary search tree for data storage", "label": "medium"}
+{"query": "Hello how are you", "label": "simple"}
+{"query": "What is the capital of France", "label": "simple"}
+{"query": "Design a system for natural language processing that can understand nuances of human language", "label": "complex"}
+{"query": "How does the concept of emergence in complex systems relate to the idea of strong emergence, and what are the implications for our understanding of free will and determinism?", "label": "complex"}
+{"query": "Implement the Dijkstra's algorithm to find the shortest path in a graph using Python", "label": "medium"}
+{"query": "Explain the concept of deadlocks in concurrent programming and provide an example", "label": "medium"}
+{"query": "What are the limitations of Bayesian inference in the context of non-parametric statistical models", "label": "complex"}
+{"query": "Build a machine learning model that can learn to recognize and generate novel patterns in natural language", "label": "complex"}
+{"query": "What is the largest planet in our solar system", "label": "simple"}
+{"query": "What is the definition of a verb", "label": "simple"}
+{"query": "What is the definition of a black hole", "label": "simple"}
+{"query": "Can you figure out the conditions under which a neural network can learn to recognize patterns in noisy data", "label": "complex"}
+{"query": "Explain the concept of object-oriented programming and provide examples of inheritance and polymorphism in Java", "label": "medium"}
+{"query": "I need help understanding the relationship between black hole entropy and the holographic principle", "label": "complex"}
+{"query": "What is the nature of the relationship between human values and the development of artificial intelligence", "label": "complex"}
+{"query": "Write a C++ program to implement a stack using a linked list and provide example use cases", "label": "medium"}
+{"query": "How many feet are in a yard", "label": "simple"}
+{"query": "What is the definition of a volcano", "label": "simple"}
+{"query": "How does a compiler optimize machine code for better performance in terms of execution speed and memory usage", "label": "medium"}
+{"query": "How does a blockchain verify the integrity of its transaction history to prevent tampering and ensure security", "label": "medium"}
+{"query": "Hello what's your name", "label": "simple"}
+{"query": "Write a Python program to calculate the Fibonacci sequence using dynamic programming", "label": "medium"}
+{"query": "Implement a simple game of Tic-Tac-Toe using Python and the Pygame library", "label": "medium"}
+{"query": "Compare the time and space complexity of quicksort and mergesort algorithms", "label": "medium"}
+{"query": "What is the definition of a black hole", "label": "simple"}

@@ -1,0 +1,61 @@
+{"query": "Describe the process of how a compiler translates high-level code into machine code that a computer's processor can execute", "label": "medium"}
+{"query": "Develop a novel mathematical framework for modeling the behavior of financial systems, taking into account factors such as market dynamics, risk, and uncertainty.", "label": "complex"}
+{"query": "Can the principles of quantum mechanics be used to develop a theory of quantum gravity, and if so, what are the potential implications for our understanding of the nature of space-time and the universe?", "label": "complex"}
+{"query": "I need help understanding the concept of fractals and their applications in physics", "label": "complex"}
+{"query": "Analyze the computational complexity of the knapsack problem and develop an approximation algorithm", "label": "complex"}
+{"query": "Write a JavaScript function to implement the binary search algorithm on a sorted array", "label": "medium"}
+{"query": "Write a Python program to calculate the Fibonacci sequence using dynamic programming", "label": "medium"}
+{"query": "Can the halting problem be solved using a non-standard model of arithmetic, and if so, what are the consequences for the study of computability theory?", "label": "complex"}
+{"query": "Describe the process of how a search engine indexes web pages and retrieves relevant results", "label": "medium"}
+{"query": "What is the capital of France", "label": "simple"}
+{"query": "Discuss the potential implications of a discovery of extraterrestrial life, and explore the potential consequences for our understanding of the origins of life, the possibility of intelligent life, and the search for extraterrestrial intelligence.", "label": "complex"}
+{"query": "Analyze the theoretical foundations of the concept of creativity and its relationship to human cognition and imagination", "label": "complex"}
+{"query": "Who wrote Romeo and Juliet", "label": "simple"}
+{"query": "What are the implications of the black hole information paradox for our understanding of quantum mechanics and the nature of space-time, and how can this be addressed using alternative mathematical approaches?", "label": "complex"}
+{"query": "Discuss the philosophical implications of a potential singularity in artificial intelligence, and explore the potential consequences for our understanding of intelligence, consciousness, and human existence.", "label": "complex"}
+{"query": "What is the deepest part of the ocean", "label": "simple"}
+{"query": "Explain the difference between synchronous and asynchronous programming paradigms", "label": "medium"}
+{"query": "Implement a simple chatbot using Natural Language Processing techniques and a machine learning library in Python", "label": "medium"}
+{"query": "What is the chemical symbol for gold", "label": "simple"}
+{"query": "Derive the Navier-Stokes equations from the principles of conservation of mass and momentum", "label": "complex"}
+{"query": "Implement the Dijkstra's algorithm to find the shortest path between two nodes in a weighted graph using Java", "label": "medium"}
+{"query": "What is the largest planet in our solar system", "label": "simple"}
+{"query": "In what ways do the principles of category theory provide a framework for understanding the relationships between different mathematical structures, and how can this be applied to real-world problems?", "label": "complex"}
+{"query": "What are the implications of G\u00f6del's incompleteness theorems on the foundations of mathematics and how do they relate to the concept of truth in formal systems?", "label": "complex"}
+{"query": "Build a machine learning model that can learn to recognize and generate novel patterns in music and art", "label": "complex"}
+{"query": "How can we reconcile the principles of quantum mechanics with the principles of general relativity in the context of black hole singularities and the information paradox?", "label": "complex"}
+{"query": "What is the relationship", "label": "complex"}
+{"query": "Develop a theoretical model for understanding the emergence of complex behaviors in biological systems, such as pattern formation, morphogenesis, and collective behavior, and discuss the potential applications for biology, medicine, and biotechnology.", "label": "complex"}
+{"query": "Compare the time complexity of mergesort and quicksort algorithms in terms of best and worst-case scenarios", "label": "medium"}
+{"query": "Explain the concept of object-oriented programming and provide examples of inheritance and polymorphism in Java", "label": "medium"}
+{"query": "Develop a mathematical framework for modeling the behavior of complex systems exhibiting emergence, such as flocking or schooling behaviors in biological populations.", "label": "complex"}
+{"query": "How does the concept of non-equilibrium thermodynamics relate to the study of living systems", "label": "complex"}
+{"query": "What are the potential applications of non-commutative geometry in physics, and how does this relate to the study of quantum gravity and the nature of space-time?", "label": "complex"}
+{"query": "Analyze the computational complexity of the protein folding problem", "label": "complex"}
+{"query": "Convert 10 miles to kilometers", "label": "simple"}
+{"query": "What is the smallest country in the world", "label": "simple"}
+{"query": "How many days are in a week", "label": "simple"}
+{"query": "What is the melting point of ice in Fahrenheit", "label": "simple"}
+{"query": "Develop a comprehensive theory of the origins of the universe and the formation of structure within it", "label": "complex"}
+{"query": "Hello how are you", "label": "simple"}
+{"query": "Design a secure multi-party computation protocol for privacy-preserving data analysis", "label": "complex"}
+{"query": "What is 5 degrees Celsius in Fahrenheit", "label": "simple"}
+{"query": "What is the relationship between the Fibonacci sequence and the golden ratio in nature", "label": "complex"}
+{"query": "How does the Many-Worlds Interpretation of quantum mechanics address the measurement problem, and what are the potential drawbacks of this approach?", "label": "complex"}
+{"query": "What is the nature of time and its relationship to the human experience of consciousness", "label": "complex"}
+{"query": "How does the git version control system handle branching and merging", "label": "medium"}
+{"query": "Implement a binary search algorithm in Python to find an element in a sorted list", "label": "medium"}
+{"query": "I need help understanding the relationship between black hole entropy and the holographic principle", "label": "complex"}
+{"query": "What is the capital of France", "label": "simple"}
+{"query": "Why is the study of turbulence so challenging and what are the current research directions", "label": "complex"}
+{"query": "Convert 50 degrees Celsius to Fahrenheit", "label": "simple"}
+{"query": "How does the concept of emergence relate to the study of complex systems in biology and sociology", "label": "complex"}
+{"query": "How do web applications use cookies and session management to track user activity", "label": "medium"}
+{"query": "What is the largest mammal on Earth", "label": "simple"}
+{"query": "What are the philosophical implications of the concept of time and its relationship to the nature of reality, and how does this impact our understanding of the universe and our place within it?", "label": "complex"}
+{"query": "Analyze the epistemological implications of a Bayesian approach to scientific inquiry and hypothesis testing", "label": "complex"}
+{"query": "Implement the Dijkstra's algorithm to find the shortest path in a weighted graph", "label": "medium"}
+{"query": "How does a compiler optimize machine code for better performance in terms of execution speed and memory usage", "label": "medium"}
+{"query": "What is the definition of a volcano", "label": "simple"}
+{"query": "How does the concept of fractal dimensions relate to the study of complex networks and scaling laws", "label": "complex"}
+{"query": "How do virtual machines provide platform independence for programming languages", "label": "medium"}

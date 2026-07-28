@@ -1,0 +1,176 @@
+{"query": "What is 10 kilometers in miles", "label": "simple"}
+{"query": "Prove that the problem of finding the shortest path in a graph is NP-complete and cannot be solved exactly in polynomial time", "label": "complex"}
+{"query": "What is the largest planet in our solar system", "label": "simple"}
+{"query": "Discuss the philosophical implications of a potential singularity in artificial intelligence, and explore the potential consequences for our understanding of intelligence, consciousness, and human existence.", "label": "complex"}
+{"query": "Build a machine learning model that can learn to recognize and generate novel patterns in music and art", "label": "complex"}
+{"query": "How does the concept of information relate to the fundamental laws of physics", "label": "complex"}
+{"query": "Write a C++ program to implement the recursive algorithm for calculating the factorial of a number", "label": "medium"}
+{"query": "Describe the steps involved in bootstrapping a computer system from power-on to loading the operating system", "label": "medium"}
+{"query": "Compare the performance of different sorting algorithms such as bubble sort and heap sort", "label": "medium"}
+{"query": "Explain the concept of inheritance in object-oriented programming and provide examples of its use", "label": "medium"}
+{"query": "Design a neural network architecture capable of learning abstract mathematical concepts", "label": "complex"}
+{"query": "How does the concept of emergence relate to the study of complex systems in biology and sociology", "label": "complex"}
+{"query": "Hello how are you", "label": "simple"}
+{"query": "Compare the advantages and disadvantages of using a relational database versus a NoSQL database for storing and retrieving data", "label": "medium"}
+{"query": "Compare the security features of HTTPS and HTTP protocols for secure data transmission over the internet", "label": "medium"}
+{"query": "I need help understanding the difference between a Markov chain and a random walk on a graph", "label": "complex"}
+{"query": "Develop a theoretical model for understanding the emergence of complex behaviors in social systems, such as cooperation, altruism, and collective intelligence, and discuss the potential applications for social policy and decision-making.", "label": "complex"}
+{"query": "How does the concept of information relate to the study of thermodynamics and the behavior of physical systems", "label": "complex"}
+{"query": "What is the deepest part of the ocean", "label": "simple"}
+{"query": "Describe the process of compiling a Java program into bytecode and executing it on the JVM", "label": "medium"}
+{"query": "What is the definition of artificial intelligence", "label": "simple"}
+{"query": "Design a system for autonomous decision-making and moral reasoning in artificial intelligence", "label": "complex"}
+{"query": "Compare and contrast the mathematical and computational approaches to understanding turbulence in fluid dynamics, and discuss the potential for developing new models and simulations that can accurately capture turbulent phenomena.", "label": "complex"}
+{"query": "Explain the concept of dynamic typing in programming languages and provide examples", "label": "medium"}
+{"query": "Compare the time complexity of bubble sort and merge sort algorithms", "label": "medium"}
+{"query": "Compare the performance of MySQL and MongoDB databases for a high-traffic e-commerce website", "label": "medium"}
+{"query": "Compare the security features of HTTPS and HTTP protocols for secure data transmission", "label": "medium"}
+{"query": "Describe the process of how a neural network is trained using backpropagation and stochastic gradient descent", "label": "medium"}
+{"query": "What is the boiling point of water in Celsius", "label": "simple"}
+{"query": "Who painted the Mona Lisa", "label": "simple"}
+{"query": "Describe the process of how a web browser renders a web page and executes JavaScript code", "label": "medium"}
+{"query": "Describe the process of how a compiler translates high-level code into machine code that a computer's processor can execute", "label": "medium"}
+{"query": "Compare the time complexity of mergesort and quicksort algorithms in terms of best and worst-case scenarios", "label": "medium"}
+{"query": "What is the capital of France", "label": "simple"}
+{"query": "Derive the equations of general relativity from the principles of equivalence and covariance", "label": "complex"}
+{"query": "Design a simple chatbot that can respond to basic user queries using natural language processing", "label": "medium"}
+{"query": "Analyze the theoretical foundations of the concept of personal identity and its relationship to memory and consciousness", "label": "complex"}
+{"query": "What is 20 dollars in euros", "label": "simple"}
+{"query": "Develop a rigorous proof of the halting problem's undecidability using diagonalization", "label": "complex"}
+{"query": "Explain the concept of abstraction in programming and provide an example using a high-level language", "label": "medium"}
+{"query": "Explore the possibility of using homotopy type theory as a foundation for mathematics, and discuss the potential implications for our understanding of mathematical structures and their relationships.", "label": "complex"}
+{"query": "What is the definition of cloud computing", "label": "simple"}
+{"query": "Develop a novel approach to solving the P versus NP problem, and discuss the potential implications of a solution for cryptography, optimization, and computational complexity theory.", "label": "complex"}
+{"query": "What is the largest mammal on Earth", "label": "simple"}
+{"query": "Analyze the epistemological implications of a falsificationist approach to scientific inquiry and theory testing", "label": "complex"}
+{"query": "What is the largest desert in the world", "label": "simple"}
+{"query": "Write a Java program to implement the producer-consumer problem using threads and synchronization", "label": "medium"}
+{"query": "Implement a simple neural network using backpropagation and stochastic gradient descent", "label": "medium"}
+{"query": "What is the chemical symbol for gold", "label": "simple"}
+{"query": "Describe the steps involved in the process of loading a program into memory and executing it on a computer", "label": "medium"}
+{"query": "What is the underlying mechanism behind the emergence of complex behaviors in chaotic systems", "label": "complex"}
+{"query": "What is the definition of artificial intelligence", "label": "simple"}
+{"query": "How does a relational database management system handle query optimization and indexing", "label": "medium"}
+{"query": "What are the implications of the concept of non-locality in quantum mechanics on our understanding of space and time", "label": "complex"}
+{"query": "What is the largest state in the United States by area", "label": "simple"}
+{"query": "Explain the concept of encapsulation in object-oriented programming and provide an example", "label": "medium"}
+{"query": "How does the concept of information theory relate to the study of quantum mechanics and the nature of reality, and what are the potential implications for our understanding of the universe?", "label": "complex"}
+{"query": "Explain the concept of Big O notation and how it is used to analyze the time and space complexity of algorithms", "label": "medium"}
+{"query": "Prove that the P versus NP problem is undecidable", "label": "complex"}
+{"query": "Convert 10 miles to kilometers", "label": "simple"}
+{"query": "What is the definition of a solar eclipse", "label": "simple"}
+{"query": "What is the definition of renewable energy", "label": "simple"}
+{"query": "What are the main differences between a hash table and a binary search tree in terms of data structure and search efficiency", "label": "medium"}
+{"query": "Define the word happiness", "label": "simple"}
+{"query": "Build a formal system for reasoning about probability and uncertainty in artificial intelligence", "label": "complex"}
+{"query": "How does the concept of fractals relate to the study of self-similarity in nature and art", "label": "complex"}
+{"query": "Write a C++ function to calculate the nth Fibonacci number using dynamic programming techniques", "label": "medium"}
+{"query": "How many days are in a week", "label": "simple"}
+{"query": "Compare the advantages and disadvantages of monolithic architecture and microservices architecture", "label": "medium"}
+{"query": "What is the largest state in the United States by land area", "label": "simple"}
+{"query": "Develop a mathematical framework for modeling the behavior of economic systems and predicting market trends", "label": "complex"}
+{"query": "Explain how a web browser renders a webpage and handles user interactions", "label": "medium"}
+{"query": "Design a theoretical framework for understanding the relationships between cognitive biases, heuristics, and decision-making in complex systems, and discuss the potential applications for behavioral economics and social policy.", "label": "complex"}
+{"query": "Can we develop a rigorous mathematical framework for analyzing the emergence of complex behaviors in social networks, taking into account factors such as network topology and agent interactions?", "label": "complex"}
+{"query": "What is the largest river in South America", "label": "simple"}
+{"query": "What is the smallest country in the world", "label": "simple"}
+{"query": "Build a machine learning model that can learn to recognize and generate novel patterns in data", "label": "complex"}
+{"query": "Write a Python program to calculate the factorial of a given number using recursion", "label": "medium"}
+{"query": "What is the largest living species of lizard", "label": "simple"}
+{"query": "Develop a novel approach to solving the Riemann Hypothesis, and discuss the potential implications for number theory, algebraic geometry, and computational complexity theory.", "label": "complex"}
+{"query": "How do virtual machines provide platform independence for programming languages", "label": "medium"}
+{"query": "Explain the relationship between the Navier-Stokes equations and the phenomenon of turbulence in fluid dynamics, and discuss the challenges of developing a rigorous mathematical theory of the latter.", "label": "complex"}
+{"query": "How many days are in a week", "label": "simple"}
+{"query": "I need help understanding the relationship between the principles of signal processing and the study of communication systems", "label": "complex"}
+{"query": "Build a formal system for reasoning about moral obligations and duties in artificial intelligence", "label": "complex"}
+{"query": "Describe the architecture of a load balancer and its role in distributing traffic across multiple servers", "label": "medium"}
+{"query": "Analyze the security vulnerabilities of a cryptographic protocol based on discrete logarithms", "label": "complex"}
+{"query": "What is 5 degrees Celsius in Fahrenheit", "label": "simple"}
+{"query": "Derive the Navier-Stokes equations from the principles of conservation of mass and momentum", "label": "complex"}
+{"query": "Compare the performance characteristics of different types of disk storage such as HDD and SSD", "label": "medium"}
+{"query": "What are the potential applications of category theory in computer science, and how does this relate to the study of programming languages and software development?", "label": "complex"}
+{"query": "Design a cryptographic protocol for secure communication over an insecure channel", "label": "complex"}
+{"query": "Investigate the possibility of using category theory as a framework for integrating different mathematical structures and theories, and discuss the potential benefits and challenges of such an approach.", "label": "complex"}
+{"query": "Compare the characteristics of centralized and decentralized version control systems", "label": "medium"}
+{"query": "Implement a simple chatbot using natural language processing techniques and regular expressions", "label": "medium"}
+{"query": "Describe the process of memory management in a programming language such as C or C++", "label": "medium"}
+{"query": "How does the git version control system handle branching and merging", "label": "medium"}
+{"query": "Implement a simple game of Tic-Tac-Toe using a minimax algorithm and alpha-beta pruning in C++", "label": "medium"}
+{"query": "How does the concept of fractals and self-similarity relate to the study of complex systems and the emergence of pattern and structure?", "label": "complex"}
+{"query": "Write a C# program to solve the Traveling Salesman Problem using a genetic algorithm", "label": "medium"}
+{"query": "Implement the Bubble Sort algorithm to sort a list of integers in ascending order using JavaScript", "label": "medium"}
+{"query": "What is 200 pounds in kilograms", "label": "simple"}
+{"query": "Write a JavaScript function to implement the binary search algorithm on a sorted array", "label": "medium"}
+{"query": "How does a web browser render a webpage and handle user interactions such as clicks and scrolling", "label": "medium"}
+{"query": "Prove that the Lorenz attractor is a strange attractor with a fractal dimension", "label": "complex"}
+{"query": "How many ounces are in a pound", "label": "simple"}
+{"query": "What is the largest city in South America", "label": "simple"}
+{"query": "Prove that the Riemann hypothesis is true and has important implications for number theory and cryptography", "label": "complex"}
+{"query": "How do operating systems handle process scheduling and context switching", "label": "medium"}
+{"query": "Can you explain the concept of emergence in complex systems and its connection to self-organization", "label": "complex"}
+{"query": "Can you figure out the optimal strategy for playing a game of chess using minimax algorithm", "label": "complex"}
+{"query": "What is the boiling point of water in Celsius", "label": "simple"}
+{"query": "Analyze the potential consequences of a global transition to a post-scarcity economy, and discuss the potential benefits and drawbacks of such a system in terms of social, economic, and environmental sustainability.", "label": "complex"}
+{"query": "Implement a binary search algorithm in Python to find an element in a sorted list", "label": "medium"}
+{"query": "Describe the architecture of a cloud computing system and how it provides scalable and on-demand computing resources", "label": "medium"}
+{"query": "Can you figure out the implications of a non-deterministic universe on our understanding of free will", "label": "complex"}
+{"query": "Implement a simple parser for a context-free grammar using recursive descent parsing", "label": "medium"}
+{"query": "What is the largest living species of lizard", "label": "simple"}
+{"query": "What is the chemical symbol for gold", "label": "simple"}
+{"query": "Derive the mathematical framework for describing the behavior of black holes in general relativity", "label": "complex"}
+{"query": "Describe the steps involved in setting up a secure SSL/TLS connection for a web server", "label": "medium"}
+{"query": "Who wrote Romeo and Juliet", "label": "simple"}
+{"query": "Prove that the Ising model exhibits a phase transition in the presence of an external magnetic field", "label": "complex"}
+{"query": "What is the farthest human made object from Earth", "label": "simple"}
+{"query": "Explore the connections between the mathematical structures underlying topological quantum field theory and those of knot theory, and discuss potential applications to problems in physics.", "label": "complex"}
+{"query": "What is the highest mountain peak", "label": "simple"}
+{"query": "Prove that the set of real numbers is uncountably infinite", "label": "complex"}
+{"query": "How does the Many-Worlds Interpretation of quantum mechanics address the measurement problem, and what are the potential drawbacks of this approach?", "label": "complex"}
+{"query": "Design a system for automated reasoning about natural language and common sense", "label": "complex"}
+{"query": "Implement a simple chatbot using Natural Language Processing techniques and a machine learning library in Python", "label": "medium"}
+{"query": "What is the largest mammal on Earth", "label": "simple"}
+{"query": "What is the speed of light in kilometers per second", "label": "simple"}
+{"query": "Explain how a database index improves query performance and provide examples of different indexing techniques", "label": "medium"}
+{"query": "What is the smallest country in the world", "label": "simple"}
+{"query": "How does a router forward packets of data between networks using IP addresses and subnet masks", "label": "medium"}
+{"query": "Convert 50 degrees Celsius to Fahrenheit", "label": "simple"}
+{"query": "What is the highest mountain peak in Asia", "label": "simple"}
+{"query": "Explain the concept of memoization in programming and provide examples of its use", "label": "medium"}
+{"query": "What is the chemical symbol for gold", "label": "simple"}
+{"query": "What is the largest living species of turtle", "label": "simple"}
+{"query": "How do web applications use cookies and session management to track user activity", "label": "medium"}
+{"query": "What are the differences between monolithic architecture and microservices architecture in software design", "label": "medium"}
+{"query": "What is the definition of a galaxy", "label": "simple"}
+{"query": "I need help understanding the relationship between the principles of topology and the study of geometric shapes", "label": "complex"}
+{"query": "What is the largest mammal on Earth", "label": "simple"}
+{"query": "What is the definition of a hashtag", "label": "simple"}
+{"query": "What is the definition of artificial intelligence", "label": "simple"}
+{"query": "What is the smallest country in the world", "label": "simple"}
+{"query": "Why is the study of turbulence so challenging and what are the current research directions", "label": "complex"}
+{"query": "What are the implications of the P versus NP problem for the study of computational complexity, and how does this relate to the concept of efficient computation and the limits of human knowledge?", "label": "complex"}
+{"query": "What is the largest planet in our solar system", "label": "simple"}
+{"query": "What are the limitations of using probabilistic methods for solving problems in computer science, such as estimating the average-case complexity of algorithms or modeling the behavior of random processes?", "label": "complex"}
+{"query": "What is the capital of France", "label": "simple"}
+{"query": "Design a theoretical framework for a new form of artificial intelligence that incorporates elements of cognitive architectures, neural networks, and symbolic reasoning, and discuss its potential applications and limitations.", "label": "complex"}
+{"query": "Implement the Dijkstra's algorithm to find the shortest path between two nodes in a weighted graph using Java", "label": "medium"}
+{"query": "Describe the process of how a search engine indexes web pages and retrieves relevant results", "label": "medium"}
+{"query": "How do search engines use indexing and ranking algorithms to retrieve relevant results", "label": "medium"}
+{"query": "Implement a simple neural network using Python and the Keras library to classify handwritten digits", "label": "medium"}
+{"query": "What is the deepest part of the ocean", "label": "simple"}
+{"query": "Analyze the security implications of quantum computing on current cryptographic systems", "label": "complex"}
+{"query": "Explain how a computer's operating system manages memory and handles virtual memory when physical RAM is full", "label": "medium"}
+{"query": "Develop a mathematical model for the spread of diseases in populations, taking into account factors such as network structure, individual behavior, and environmental factors.", "label": "complex"}
+{"query": "What is the melting point of ice in Fahrenheit", "label": "simple"}
+{"query": "What is the largest city in Japan", "label": "simple"}
+{"query": "Develop a novel algorithm for solving the traveling salesman problem using techniques from topology and geometry, and analyze its computational complexity.", "label": "complex"}
+{"query": "What is the boiling point of water in Celsius", "label": "simple"}
+{"query": "Explain the concept of recursion in programming and provide an example of a recursive function in Python", "label": "medium"}
+{"query": "Implement the Dijkstra's algorithm to find the shortest path in a weighted graph", "label": "medium"}
+{"query": "In what ways can the mathematical structures underlying mirror symmetry in algebraic geometry inform our understanding of string theory and the behavior of black holes?", "label": "complex"}
+{"query": "What is the definition of a galaxy", "label": "simple"}
+{"query": "What is the average lifespan of a cat", "label": "simple"}
+{"query": "What is the definition of a noun", "label": "simple"}
+{"query": "What are the potential applications and limitations of using machine learning and artificial intelligence for analyzing and modeling complex systems, such as climate models, economic systems, and social networks?", "label": "complex"}
+{"query": "What are the key differences between a monolithic architecture and a microservices architecture in software development", "label": "medium"}
+{"query": "Who is the CEO of Tesla", "label": "simple"}
+{"query": "What is the highest mountain peak in North America", "label": "simple"}

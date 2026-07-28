@@ -1,4 +1,7 @@
-venv/
+﻿venv/
 .env
 __pycache__/
 *.pyc
+classifier_model/
+classifier_model_v2/
+classifier_model_v3/

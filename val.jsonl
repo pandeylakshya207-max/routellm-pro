@@ -1,0 +1,45 @@
+{"query": "Describe the process of memory management in a programming language such as C or C++", "label": "medium"}
+{"query": "Discuss the potential implications of a discovery of extraterrestrial life, and explore the potential consequences for our understanding of the origins of life, the possibility of intelligent life, and the search for extraterrestrial intelligence.", "label": "complex"}
+{"query": "What is the boiling point of water in Celsius", "label": "simple"}
+{"query": "Develop a theoretical model for understanding the emergence of complex behaviors in biological systems, such as pattern formation, morphogenesis, and collective behavior, and discuss the potential applications for biology, medicine, and biotechnology.", "label": "complex"}
+{"query": "Develop a mathematical framework for modeling the behavior of complex systems exhibiting emergence, such as flocking or schooling behaviors in biological populations.", "label": "complex"}
+{"query": "What is the largest planet in our solar system", "label": "simple"}
+{"query": "Explain the concept of deadlocks in concurrent programming and provide an example", "label": "medium"}
+{"query": "Describe the process of how a search engine indexes web pages and retrieves relevant results", "label": "medium"}
+{"query": "Implement a simple neural network using Python and the Keras library to classify handwritten digits", "label": "medium"}
+{"query": "What is the definition of artificial intelligence", "label": "simple"}
+{"query": "What is the definition of renewable energy", "label": "simple"}
+{"query": "How can we reconcile the principles of quantum mechanics with the principles of general relativity in the context of black hole singularities and the information paradox?", "label": "complex"}
+{"query": "Explain the concept of object-oriented programming and provide examples of inheritance and polymorphism in Java", "label": "medium"}
+{"query": "What is the definition of artificial intelligence", "label": "simple"}
+{"query": "Design an experimental protocol for testing the hypothesis that humans have a inherent sense of fairness and cooperation, and discuss the potential implications for social policy, economics, and decision-making.", "label": "complex"}
+{"query": "What is the speed of light in kilometers per second", "label": "simple"}
+{"query": "What is the relationship between the study of chaos theory and the concept of unpredictability, and how does this impact our understanding of complex systems and the nature of reality?", "label": "complex"}
+{"query": "In what ways can the mathematical structures underlying mirror symmetry in algebraic geometry inform our understanding of string theory and the behavior of black holes?", "label": "complex"}
+{"query": "How does the Many-Worlds Interpretation of quantum mechanics address the measurement problem, and what are the potential drawbacks of this approach?", "label": "complex"}
+{"query": "What is the definition of a noun", "label": "simple"}
+{"query": "Convert 10 miles to kilometers", "label": "simple"}
+{"query": "Implement a simple chatbot using natural language processing techniques and regular expressions", "label": "medium"}
+{"query": "What are the implications of the black hole information paradox for our understanding of quantum mechanics and the nature of space-time, and how can this be addressed using alternative mathematical approaches?", "label": "complex"}
+{"query": "Discuss the philosophical implications of a potential singularity in artificial intelligence, and explore the potential consequences for our understanding of intelligence, consciousness, and human existence.", "label": "complex"}
+{"query": "What are the key differences between a monolithic architecture and a microservices architecture in software development", "label": "medium"}
+{"query": "Explain the concept of memoization in programming and provide examples of its use", "label": "medium"}
+{"query": "Compare the performance of MySQL and MongoDB databases for a high-traffic e-commerce website", "label": "medium"}
+{"query": "What are the philosophical implications of the Church-Turing thesis, and how does it relate to the concept of effective computability and the limits of human knowledge?", "label": "complex"}
+{"query": "Can a universal Turing machine be constructed using only a finite number of states and symbols, and if so, what are the consequences for the study of computability?", "label": "complex"}
+{"query": "Convert 50 degrees Celsius to Fahrenheit", "label": "simple"}
+{"query": "What is the definition of a black hole", "label": "simple"}
+{"query": "What is the capital of France", "label": "simple"}
+{"query": "What is the relationship between the study of cognitive science and the concept of consciousness, and how does this impact our understanding of the human mind and the nature of reality?", "label": "complex"}
+{"query": "What is the relationship between the Riemann hypothesis and the distribution of prime numbers, and how does this impact our understanding of number theory and cryptography?", "label": "complex"}
+{"query": "Design a theoretical framework for a new form of artificial intelligence that incorporates elements of cognitive architectures, neural networks, and symbolic reasoning, and discuss its potential applications and limitations.", "label": "complex"}
+{"query": "Write a C# program to solve the Traveling Salesman Problem using a genetic algorithm", "label": "medium"}
+{"query": "What is 200 pounds in kilograms", "label": "simple"}
+{"query": "How many days are in a week", "label": "simple"}
+{"query": "Implement a simple chatbot using Natural Language Processing techniques and a machine learning library in Python", "label": "medium"}
+{"query": "Explain the concept of recursion in programming and provide an example of a recursive function in Python", "label": "medium"}
+{"query": "What is the largest state in the United States by area", "label": "simple"}
+{"query": "How does a relational database management system handle query optimization and indexing", "label": "medium"}
+{"query": "How does a compiler optimize machine code for better performance in terms of execution speed and memory usage", "label": "medium"}
+{"query": "Explain the concept of dynamic typing in programming languages and provide examples", "label": "medium"}
+{"query": "What is the largest city in South America", "label": "simple"}
