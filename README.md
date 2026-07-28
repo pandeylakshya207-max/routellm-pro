@@ -43,3 +43,26 @@ uvicorn main:app --reload
 - [ ] A/B testing framework
 
 Author: Lakshya Pandey - github.com/pandeylakshya207-max
+
+## Phase 2: Trained Classifier - Benchmark Results
+
+Attempted to replace the prompt-based classifier with a fine-tuned DistilBERT model, trained on
+221 synthetically-generated labeled examples (Groq-generated, stratified across simple/medium/complex).
+
+**Head-to-head benchmark (n=24, hand-written held-out test set):**
+
+| Classifier | Accuracy | F1 (macro) |
+|---|---|---|
+| Prompt-based (production) | 95.8% | 0.958 |
+| Trained DistilBERT | 83.3% | 0.829 |
+
+**Finding:** The trained classifier systematically under-predicted "complex" (recall 0.62 vs 1.00
+for prompt-based), misclassifying genuinely complex queries as "medium" when phrased as direct
+requests (e.g. "Prove that...", "Design a...") rather than the declarative research-toned phrasing
+("Derive...", "Develop...") that dominated the synthetic training data for that class. This points
+to a phrasing-style bias inherited from LLM-generated training data, not a failure of the
+architecture itself.
+
+**Decision:** Retained the prompt-based classifier in production. The trained model requires a
+larger, more phrasing-diverse dataset (ideally with some human-labeled real queries, not purely
+synthetic) before it can be considered for deployment.
