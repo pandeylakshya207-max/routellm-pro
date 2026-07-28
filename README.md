@@ -66,3 +66,31 @@ architecture itself.
 **Decision:** Retained the prompt-based classifier in production. The trained model requires a
 larger, more phrasing-diverse dataset (ideally with some human-labeled real queries, not purely
 synthetic) before it can be considered for deployment.
+
+
+### Iteration: Fixing the Phrasing Bias
+
+Hypothesis: the "complex" class underperformed because synthetic training examples were dominated
+by declarative research-toned phrasing ("Derive...", "Develop...") rather than direct-request
+phrasing ("Prove...", "Design..."). Generated 155 additional phrasing-diverse "complex" examples
+explicitly varying command style, retrained (v2).
+
+**Results (same n=24 held-out test set):**
+
+| Classifier | Accuracy | F1 (macro) |
+|---|---|---|
+| Prompt-based (production) | 95.8% | 0.958 |
+| Trained v1 | 83.3% | 0.829 |
+| Trained v2 (phrasing-diverse data) | 91.7% | 0.915 |
+
+**Finding:** The targeted fix worked as hypothesized - complex-class recall improved from 0.62 to
+1.00, correctly resolving all four of v1's original failures (P vs NP, distributed consensus,
+Byzantine fault tolerance, prime number proof). However, this introduced a new tradeoff: medium-class
+recall dropped from 1.00 to 0.75, with the model now over-predicting "complex" on some medium
+queries - likely due to class imbalance introduced by adding 155 new complex examples against
+~73 each for simple/medium.
+
+**Decision:** Prompt-based classifier remains in production. v2 is a meaningful improvement over v1
+(83.3% -> 91.7%) but still trails the baseline, and its complex/medium confusion has a real cost
+implication for a routing system (misrouting medium queries to the expensive frontier tier).
+Next step would be rebalancing the dataset rather than simply adding more complex examples.
