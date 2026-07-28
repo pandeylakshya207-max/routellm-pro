@@ -94,3 +94,33 @@ queries - likely due to class imbalance introduced by adding 155 new complex exa
 (83.3% -> 91.7%) but still trails the baseline, and its complex/medium confusion has a real cost
 implication for a routing system (misrouting medium queries to the expensive frontier tier).
 Next step would be rebalancing the dataset rather than simply adding more complex examples.
+
+
+### Iteration 2: Testing the Class-Imbalance Hypothesis
+
+Hypothesis: v2's medium-recall drop (1.00 -> 0.75) was caused by class imbalance (155 complex vs
+~73 each for simple/medium). Rebalanced to ~74 examples per class (v3), retrained.
+
+**Results (same n=24 held-out test set):**
+
+| Classifier | Accuracy | F1 (macro) |
+|---|---|---|
+| Prompt-based (production) | 95.8% | 0.958 |
+| Trained v2 (imbalanced) | 91.7% | 0.915 |
+| Trained v3 (balanced) | 91.7% | 0.913 |
+
+**Finding:** Rebalancing had no effect - v3 performs identically to v2, with the exact same two
+failure cases (both science *explanation* queries - "What causes seasons to change on Earth?" and
+"Explain how photosynthesis works"). This falsifies the class-imbalance hypothesis. The more likely
+explanation: these two queries share surface-level structural and lexical similarity with the
+"complex" training examples (explanation-style phrasing, science/physics vocabulary), suggesting
+the model is partly relying on domain/vocabulary cues rather than fully disentangling genuine
+open-endedness from well-defined explanatory questions - a harder distinction that likely needs
+either more training data specifically contrasting these two patterns, or a fundamentally
+different feature representation.
+
+**Final decision:** Prompt-based classifier remains in production (95.8% vs 91.7% best trained
+result). The three-iteration experiment (v1 -> v2 -> v3) demonstrates the value of hypothesis-driven
+iteration: the first fix (phrasing diversity) produced a real, measurable improvement (+8.4pp);
+the second fix (class rebalancing) was a reasonable hypothesis that the data disproved, which is
+itself a useful negative result ruling out one candidate explanation for the remaining gap.
