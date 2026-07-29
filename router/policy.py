@@ -13,7 +13,6 @@ redis_client = Redis(
     token=os.getenv("UPSTASH_REDIS_REST_TOKEN"),
 )
 
-# Rough relative cost weights (arbitrary units, small=cheapest)
 COST_WEIGHTS = {
     "small": 1,
     "mid": 3,
@@ -26,8 +25,20 @@ TIER_TO_FUNCTION = {
     "complex": call_frontier,
 }
 
+# Fallback chain: if a tier fails, try the next one down
+FALLBACK_CHAIN = {
+    "complex": [call_frontier, call_mid, call_small],
+    "medium": [call_mid, call_small],
+    "simple": [call_small],
+}
+
+FALLBACK_TIER_NAMES = {
+    call_small: "small",
+    call_mid: "mid",
+    call_frontier: "frontier",
+}
+
 def log_to_redis(entry: dict):
-    """Push a routing log entry into a Redis list, non-blocking on failure."""
     try:
         redis_client.lpush("routellm:logs", json.dumps(entry))
     except Exception as e:
@@ -35,23 +46,51 @@ def log_to_redis(entry: dict):
 
 def route_query(query: str) -> dict:
     """
-    Classifies the query, routes it to the appropriate tier,
-    logs the result to Redis, and returns the response with metadata.
+    Classifies the query, routes it to the appropriate tier with automatic
+    fallback if the primary tier fails, logs the result, and returns the
+    response with metadata.
     """
     start_time = time.time()
 
     complexity = classify_query(query)
+    chain = FALLBACK_CHAIN[complexity]
 
-    tier_map = {
-        "simple": "small",
-        "medium": "mid",
-        "complex": "frontier",
-    }
-    chosen_tier = tier_map[complexity]
+    result = None
+    fallback_occurred = False
+    attempted_tiers = []
 
-    call_fn = TIER_TO_FUNCTION[complexity]
-    result = call_fn(query)
+    for i, call_fn in enumerate(chain):
+        tier_name = FALLBACK_TIER_NAMES[call_fn]
+        attempted_tiers.append(tier_name)
+        try:
+            result = call_fn(query)
+            if i > 0:
+                fallback_occurred = True
+            break
+        except Exception as e:
+            print(f"Tier '{tier_name}' failed: {e}")
+            continue
 
+    if result is None:
+        # Every tier in the chain failed
+        latency = round(time.time() - start_time, 3)
+        error_result = {
+            "text": "",
+            "tier": "none",
+            "model": "none",
+            "provider": "none",
+            "complexity_label": complexity,
+            "latency_seconds": latency,
+            "cost_weight": 0,
+            "timestamp": time.time(),
+            "query": query,
+            "error": "all_tiers_failed",
+            "attempted_tiers": attempted_tiers,
+        }
+        log_to_redis(error_result)
+        return error_result
+
+    chosen_tier = result["tier"]
     latency = round(time.time() - start_time, 3)
 
     result["complexity_label"] = complexity
@@ -59,6 +98,8 @@ def route_query(query: str) -> dict:
     result["cost_weight"] = COST_WEIGHTS[chosen_tier]
     result["timestamp"] = time.time()
     result["query"] = query
+    result["fallback_occurred"] = fallback_occurred
+    result["attempted_tiers"] = attempted_tiers
 
     log_to_redis(result)
 
