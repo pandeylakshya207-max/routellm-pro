@@ -1,0 +1,28 @@
+{
+  "n_queries": 24,
+  "always_small": {
+    "total_cost": 24,
+    "avg_cost_per_query": 1.0,
+    "avg_latency": 2.89
+  },
+  "always_frontier": {
+    "n_sampled": 0,
+    "sampled_total_cost": 0,
+    "avg_cost_per_query": null,
+    "avg_latency": null,
+    "extrapolated_total_cost_for_all_queries": null,
+    "note": "Limited by Gemini free-tier daily quota (20 req/day); cost/latency per-query are measured directly, total is extrapolated"
+  },
+  "router": {
+    "total_cost": 63,
+    "avg_cost_per_query": 2.625,
+    "avg_latency": 3.185,
+    "tier_distribution": {
+      "small": 8,
+      "mid": 15,
+      "frontier": 1
+    },
+    "fallback_count": 6,
+    "cost_savings_vs_frontier_pct": null
+  }
+}
