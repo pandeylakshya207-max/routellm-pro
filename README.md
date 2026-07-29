@@ -145,3 +145,12 @@ signal without actual log-probability access.
 **Decision:** Scoped out confidence-based cascading for this iteration rather than building on
 an unreliable signal. Revisit if switching to a provider that exposes logprobs, or explore a
 verifier-model approach (a second model scores the first model's answer) as an alternative.
+
+
+## Note on Free-Tier Rate Limits
+
+During development of the cost-accuracy Pareto analysis (Phase 3), hit Gemini's free-tier daily
+quota (20 requests/day/model for gemini-flash-latest) mid-analysis. This is a genuine operational
+constraint of building on free-tier LLM APIs worth noting: production systems would need either a
+paid tier, request batching/caching, or multi-key rotation to avoid this in real usage. Pareto
+analysis resumed after quota reset.
