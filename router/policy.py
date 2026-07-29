@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from upstash_redis import Redis
 from router.classifier import classify_query
-from router.providers import call_small, call_mid, call_frontier
+from router import providers
 
 load_dotenv()
 
@@ -19,23 +19,18 @@ COST_WEIGHTS = {
     "frontier": 10,
 }
 
-TIER_TO_FUNCTION = {
-    "simple": call_small,
-    "medium": call_mid,
-    "complex": call_frontier,
-}
-
-# Fallback chain: if a tier fails, try the next one down
+# Tier names only - functions are looked up dynamically via the providers
+# module at call time, so patching providers.call_x is always reflected here.
 FALLBACK_CHAIN = {
-    "complex": [call_frontier, call_mid, call_small],
-    "medium": [call_mid, call_small],
-    "simple": [call_small],
+    "complex": ["frontier", "mid", "small"],
+    "medium": ["mid", "small"],
+    "simple": ["small"],
 }
 
-FALLBACK_TIER_NAMES = {
-    call_small: "small",
-    call_mid: "mid",
-    call_frontier: "frontier",
+TIER_TO_CALL_FN_NAME = {
+    "small": "call_small",
+    "mid": "call_mid",
+    "frontier": "call_frontier",
 }
 
 def log_to_redis(entry: dict):
@@ -59,9 +54,9 @@ def route_query(query: str) -> dict:
     fallback_occurred = False
     attempted_tiers = []
 
-    for i, call_fn in enumerate(chain):
-        tier_name = FALLBACK_TIER_NAMES[call_fn]
+    for i, tier_name in enumerate(chain):
         attempted_tiers.append(tier_name)
+        call_fn = getattr(providers, TIER_TO_CALL_FN_NAME[tier_name])
         try:
             result = call_fn(query)
             if i > 0:
@@ -72,7 +67,6 @@ def route_query(query: str) -> dict:
             continue
 
     if result is None:
-        # Every tier in the chain failed
         latency = round(time.time() - start_time, 3)
         error_result = {
             "text": "",
