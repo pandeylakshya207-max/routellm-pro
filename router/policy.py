@@ -1,9 +1,10 @@
 ﻿import time
 import json
 import os
+import random
 from dotenv import load_dotenv
 from upstash_redis import Redis
-from router.classifier import classify_query
+from router import classifier
 from router import providers
 
 load_dotenv()
@@ -19,8 +20,6 @@ COST_WEIGHTS = {
     "frontier": 10,
 }
 
-# Tier names only - functions are looked up dynamically via the providers
-# module at call time, so patching providers.call_x is always reflected here.
 FALLBACK_CHAIN = {
     "complex": ["frontier", "mid", "small"],
     "medium": ["mid", "small"],
@@ -33,21 +32,30 @@ TIER_TO_CALL_FN_NAME = {
     "frontier": "call_frontier",
 }
 
+AB_VARIANT_FN_NAMES = {
+    "A": "classify_query_a",
+    "B": "classify_query_b",
+}
+
 def log_to_redis(entry: dict):
     try:
         redis_client.lpush("routellm:logs", json.dumps(entry))
     except Exception as e:
         print(f"Redis logging failed: {e}")
 
-def route_query(query: str) -> dict:
+def route_query(query: str, ab_variant: str = None) -> dict:
     """
-    Classifies the query, routes it to the appropriate tier with automatic
-    fallback if the primary tier fails, logs the result, and returns the
-    response with metadata.
+    Classifies the query (via a randomly assigned A/B variant unless one
+    is explicitly passed), routes it with automatic fallback, logs the
+    result, and returns the response with metadata.
     """
     start_time = time.time()
 
-    complexity = classify_query(query)
+    if ab_variant is None:
+        ab_variant = random.choice(["A", "B"])
+
+    classify_fn = getattr(classifier, AB_VARIANT_FN_NAMES[ab_variant])
+    complexity = classify_fn(query)
     chain = FALLBACK_CHAIN[complexity]
 
     result = None
@@ -80,6 +88,7 @@ def route_query(query: str) -> dict:
             "query": query,
             "error": "all_tiers_failed",
             "attempted_tiers": attempted_tiers,
+            "ab_variant": ab_variant,
         }
         log_to_redis(error_result)
         return error_result
@@ -94,6 +103,7 @@ def route_query(query: str) -> dict:
     result["query"] = query
     result["fallback_occurred"] = fallback_occurred
     result["attempted_tiers"] = attempted_tiers
+    result["ab_variant"] = ab_variant
 
     log_to_redis(result)
 

@@ -1,14 +1,15 @@
 ﻿from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 import json
 from router.policy import route_query, redis_client
 
-app = FastAPI(title="RouteLLM-Pro", version="0.2.0")
+app = FastAPI(title="RouteLLM-Pro", version="0.3.0")
 
 class QueryRequest(BaseModel):
     query: str
+    ab_variant: Optional[str] = None  # "A" or "B", or omit for random assignment
 
 class QueryResponse(BaseModel):
     text: str
@@ -22,6 +23,7 @@ class QueryResponse(BaseModel):
     query: str
     fallback_occurred: bool = False
     attempted_tiers: List[str] = []
+    ab_variant: str = "A"
 
 @app.get("/")
 def root():
@@ -29,7 +31,7 @@ def root():
 
 @app.post("/route", response_model=QueryResponse)
 def route(request: QueryRequest):
-    result = route_query(request.query)
+    result = route_query(request.query, ab_variant=request.ab_variant)
     return result
 
 @app.get("/stats")
@@ -74,6 +76,38 @@ def stats():
         "estimated_savings_percent": savings_percent,
         "fallback_count": fallback_count,
     }
+
+@app.get("/ab-stats")
+def ab_stats():
+    raw_logs = redis_client.lrange("routellm:logs", 0, -1)
+    logs = [json.loads(entry) for entry in raw_logs]
+
+    variants = {"A": [], "B": []}
+    for log in logs:
+        variant = log.get("ab_variant")
+        if variant in variants:
+            variants[variant].append(log)
+
+    result = {}
+    for variant, entries in variants.items():
+        n = len(entries)
+        if n == 0:
+            result[variant] = {"n": 0}
+            continue
+        total_cost = sum(e.get("cost_weight", 0) for e in entries)
+        total_latency = sum(e.get("latency_seconds", 0) for e in entries)
+        tier_counts = {}
+        for e in entries:
+            t = e.get("tier", "unknown")
+            tier_counts[t] = tier_counts.get(t, 0) + 1
+        result[variant] = {
+            "n": n,
+            "avg_cost_per_query": round(total_cost / n, 3),
+            "avg_latency": round(total_latency / n, 3),
+            "tier_distribution": tier_counts,
+        }
+
+    return result
 
 @app.get("/dashboard", response_class=HTMLResponse)
 def dashboard():
