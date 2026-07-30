@@ -5,11 +5,11 @@ from typing import List, Optional
 import json
 from router.policy import route_query, redis_client
 
-app = FastAPI(title="RouteLLM-Pro", version="0.3.0")
+app = FastAPI(title="RouteLLM-Pro", version="0.4.0")
 
 class QueryRequest(BaseModel):
     query: str
-    ab_variant: Optional[str] = None  # "A" or "B", or omit for random assignment
+    ab_variant: Optional[str] = None
 
 class QueryResponse(BaseModel):
     text: str
@@ -24,6 +24,7 @@ class QueryResponse(BaseModel):
     fallback_occurred: bool = False
     attempted_tiers: List[str] = []
     ab_variant: str = "A"
+    skipped_degraded_tiers: List[str] = []
 
 @app.get("/")
 def root():
