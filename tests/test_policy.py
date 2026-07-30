@@ -64,4 +64,7 @@ def test_logs_to_redis(mock_small, mock_classify, mock_redis):
     mock_small.return_value = make_result("answer", "small", "llama-3.1-8b-instant", "groq")
     from router.policy import route_query
     route_query("test query", ab_variant="A")
-    mock_redis.lpush.assert_called_once()
+    # lpush is now called twice: once for latency tracking, once for the main log entry
+    assert mock_redis.lpush.call_count == 2
+    logged_keys = [call.args[0] for call in mock_redis.lpush.call_args_list]
+    assert "routellm:logs" in logged_keys
