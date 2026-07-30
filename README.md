@@ -27,12 +27,34 @@ Dashboard: https://routellm-pro.onrender.com/dashboard
 
 ## Architecture
 
-Query -> Classifier -> Router -> Model Tier -> Response -> Redis Log -> Dashboard
+```mermaid
+flowchart TD
+    A[Incoming Query] --> B{A/B Variant<br/>Assignment}
+    B -->|Policy A| C[Classifier A]
+    B -->|Policy B| D[Classifier B]
+    C --> E{Complexity}
+    D --> E
+    E -->|simple| F[Small Tier<br/>Groq llama-3.1-8b]
+    E -->|medium| G[Mid Tier<br/>Groq llama-3.3-70b]
+    E -->|complex| H[Frontier Tier<br/>Gemini flash]
+    F --> I{Tier Healthy?}
+    G --> I
+    H --> I
+    I -->|No - degraded/failed| J[Fallback to<br/>Next Tier Down]
+    I -->|Yes| K[Response]
+    J --> K
+    K --> L[Redis Log]
+    L --> M[Dashboard /<br/>ab-stats /<br/>stats]
+```
 
-Tiers:
-- Small: Groq llama-3.1-8b-instant (simple queries)
-- Mid: Groq llama-3.3-70b-versatile (reasoning, bounded coding tasks)
-- Frontier: Gemini flash-latest (open-ended theoretical reasoning)
+**Tiers:**
+- **Small:** Groq `llama-3.1-8b-instant` — simple queries
+- **Mid:** Groq `llama-3.3-70b-versatile` — reasoning, bounded coding tasks
+- **Frontier:** Gemini `flash-latest` — open-ended theoretical reasoning
+
+**Resilience layers:**
+1. Automatic fallback on hard tier failure (fault-injection tested)
+2. Proactive latency-aware skipping of degraded (slow) tiers before they're hit
 
 ## Tech Stack
 
