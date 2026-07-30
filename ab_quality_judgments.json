@@ -1,0 +1,20 @@
+[
+  {
+    "query": "What causes seasons to change on Earth?",
+    "policy_a_tier": "mid",
+    "policy_b_tier": "small",
+    "judge_output": "answer1_score: 9\nanswer2_score: 7\nverdict: Answer 1 is more accurate, whereas Answer 2 incorrectly identifies the northern hemisphere summer as lasting from March to September and overemphasizes distance from the Sun as a driver of seasonal change."
+  },
+  {
+    "query": "Explain how photosynthesis works",
+    "policy_a_tier": "mid",
+    "policy_b_tier": "small",
+    "judge_output": "answer1_score: 9.5\nanswer2_score: 7.0\nverdict: Answer 1 is highly accurate and correctly details the chemical steps of the Calvin cycle, whereas Answer 2 contains a major scientific error regarding why plants appear green and simplifies the Calvin cycle inaccurately."
+  },
+  {
+    "query": "What causes rainbows to form?",
+    "policy_a_tier": "mid",
+    "policy_b_tier": "small",
+    "judge_output": "answer1_score: 9\nanswer2_score: 8\nverdict: Answer 1 provides a more logically sequenced and scientifically precise explanation of the optical process inside the water droplet."
+  }
+]

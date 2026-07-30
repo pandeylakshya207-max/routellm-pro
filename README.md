@@ -205,3 +205,35 @@ or LLM-judge quality scoring on the queries where A and B disagree, to determine
 cost savings come with any real accuracy tradeoff.
 
 Endpoint: `GET /ab-stats` returns live per-variant comparison at any time.
+
+
+## Resolving the A/B Quality Question
+
+Followed up on the open question from the A/B cost analysis: does Policy B's cost savings come
+at a real quality cost? Used Gemini as an LLM judge (blind scoring, 1-10 scale) on the 3 query
+pairs where Policy A and Policy B actually diverged in tier assignment.
+
+**Judged results:**
+
+| Query | Policy A score | Policy B score | Notable issue in B |
+|---|---|---|---|
+| What causes seasons to change? | 9.0 | 7.0 | Wrong mechanism (overemphasized Sun-distance vs. axial tilt) |
+| How does photosynthesis work? | 9.5 | 7.0 | Factual error on why plants appear green |
+| What causes rainbows? | 9.0 | 8.0 | Less precise, not factually wrong |
+
+**Finding:** Policy A won on all 3 divergent pairs, with 2 of 3 involving genuine factual errors
+in Policy B's small-tier answers (not just stylistic or brevity differences). This reverses the
+tentative hypothesis from the cost analysis - Policy A's medium-tier threshold is not overly
+conservative; it appears well-calibrated for natural-science explanation queries, where getting
+the underlying mechanism right matters.
+
+**Also notable:** only 3 of 8 borderline test queries actually diverged between policies, and
+all 3 were natural-science explanation queries (seasons, photosynthesis, rainbows). Technical/CS
+queries (hash tables, TCP/UDP, DNS, REST vs GraphQL) were routed identically by both policies -
+Policy B's cost savings, and its quality risk, are concentrated specifically in this one query
+category, not borderline queries generally.
+
+**Final decision:** Policy A remains the production default. Policy B's cost/latency advantage
+does not justify the demonstrated accuracy cost on this query category. This is a clean example
+of an A/B test correctly preventing a plausible-looking optimization that would have degraded
+answer quality in production.
