@@ -176,3 +176,32 @@ since it reflects actual usage rather than a synthetic benchmark run.
 inflated by rate-limit retry behavior during earlier testing and should not be treated as a
 typical per-request latency figure; a controlled, quota-unconstrained benchmark would be needed
 for a clean latency comparison.
+
+
+## A/B Testing: Cost-Aggressive Classifier Variant
+
+Built a live A/B testing framework: incoming requests are randomly split between Policy A
+(control - current production classifier) and Policy B (a variant with relaxed "simple"
+thresholds, routing more borderline queries to the cheap tier). Random assignment, per-variant
+tier distribution and cost tracked live via a `/ab-stats` endpoint.
+
+**Real production results (n=23 queries, live traffic):**
+
+| Policy | n | Avg Cost/Query | Avg Latency | Tier Split |
+|---|---|---|---|---|
+| A (control) | 12 | 2.5 | 1.58s | 9 mid, 3 small |
+| B (variant) | 11 | 1.182 | 0.873s | 10 small, 1 mid |
+
+**Finding:** Policy B achieves a **52.7% cost reduction** and **~45% faster average latency**
+versus Policy A, by routing borderline explanatory queries (e.g. "what causes seasons to
+change") to the small tier instead of mid. Spot-checking these responses (see the "seasons"
+example earlier in this README) shows the small-tier model still produces coherent, accurate
+answers for well-known factual/explanatory content - suggesting Policy A's medium-tier
+threshold may be more conservative than necessary for this query category.
+
+**Open question:** whether Policy B's answers are measurably lower quality on the queries it
+downgrades, or whether Policy A was simply over-cautious. A rigorous next step would be human
+or LLM-judge quality scoring on the queries where A and B disagree, to determine whether the
+cost savings come with any real accuracy tradeoff.
+
+Endpoint: `GET /ab-stats` returns live per-variant comparison at any time.
