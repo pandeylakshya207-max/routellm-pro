@@ -4,12 +4,14 @@
 
 | Metric | Result |
 |---|---|
-| Cost savings vs. always-frontier | **72-73%** (validated against real production traffic, n=37) |
+| Cost savings vs. always-frontier | **72-73%** (validated against the live deployment logs, n=37) |
 | A/B test: cost-aggressive routing variant | **52.7% cheaper, but reversed on quality grounds** - LLM-judge scoring found real factual errors, Policy A kept as default |
 | Trained classifier vs. prompt-based baseline | Prompt-based wins (95.8% vs. best trained result of 91.7%) after 3 rigorous iterations |
-| Resilience | Automatic tier fallback, fault-injection tested, triggered 7/37 times in real production traffic with zero user-facing failures |
+| Resilience | Automatic tier fallback, fault-injection tested, triggered 7/37 times in the live deployment logs with zero user-facing failures |
 | Latency-aware scheduling | Proactively detects and routes around degraded (slow) tiers before hitting them |
 | Test coverage | 19 automated tests (pytest), covering classifier, routing, fallback, A/B assignment, and latency detection |
+
+Sample sizes are small (37 and 23 logged queries, and a 24-item test set), so treat the percentages as indicative.
 
 **The throughline:** every claim above is backed by a real, reproducible experiment, not asserted.
 Two of them (the trained classifier, the cost-aggressive A/B variant) are honest *negative*
@@ -74,8 +76,8 @@ uvicorn main:app --reload
 - [x] Multi-tier routing
 - [x] Redis logging + dashboard
 - [x] Public deployment
-- [ ] Trained classifier (Phase 2)
-- [ ] A/B testing framework
+- [x] Trained classifier (Phase 2): tested and not adopted, see below
+- [x] A/B testing framework
 
 Author: Lakshya Pandey - github.com/pandeylakshya207-max
 
@@ -191,14 +193,14 @@ paid tier, request batching/caching, or multi-key rotation to avoid this in real
 analysis resumed after quota reset.
 
 
-## Cost-Accuracy Validation (Production Data)
+## Cost-Accuracy Validation (Deployment Logs)
 
 Attempted a controlled Pareto analysis (always-small vs always-frontier vs router) but repeatedly
 hit Gemini's free-tier daily quota (20 req/day) mid-run. Rather than force this through, pivoted to
-validating cost savings against real production log data instead - arguably stronger evidence,
+validating cost savings against live deployment log data instead - arguably stronger evidence,
 since it reflects actual usage rather than a synthetic benchmark run.
 
-**Real production numbers (n=37 logged queries, live Redis data):**
+**Live deployment numbers (n=37 logged queries, live Redis data):**
 
 - Router actual total cost: 102 units
 - Always-frontier theoretical cost: 370 units
@@ -220,7 +222,7 @@ Built a live A/B testing framework: incoming requests are randomly split between
 thresholds, routing more borderline queries to the cheap tier). Random assignment, per-variant
 tier distribution and cost tracked live via a `/ab-stats` endpoint.
 
-**Real production results (n=23 queries, live traffic):**
+**Live deployment results (n=23 queries, live traffic):**
 
 | Policy | n | Avg Cost/Query | Avg Latency | Tier Split |
 |---|---|---|---|---|
