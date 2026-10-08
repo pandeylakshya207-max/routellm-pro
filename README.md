@@ -1,5 +1,7 @@
 # RouteLLM-Pro
 
+[![ci](https://github.com/pandeylakshya207-max/routellm-pro/actions/workflows/ci.yml/badge.svg)](https://github.com/pandeylakshya207-max/routellm-pro/actions/workflows/ci.yml)
+
 ## Results at a Glance
 
 | Metric | Result |
